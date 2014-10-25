@@ -10,7 +10,6 @@
 <body class="list">
 	<header class="caption">
 		<h1>JavaScript</h1>
-		<p>Артем Свирский</p>
 	</header>
 	<article class="slide cover" id="frontpage"><div>
 		<h2>JavaScript</h2>
@@ -49,10 +48,10 @@
 			}
 		</style>
 	</div></article>
-	<article class="slide"><div>
+	<article class="slide" lang="ru"><div>
 		<h2>План</h2>
 		<ul>
-			<li>Введение</li>
+			<li>История</li>
 			<li>Подключение скриптов</li>
 			<li>Переменные</li>
 			<li>Типы данных</li>
@@ -62,29 +61,29 @@
 			<li>Практика</li>
 		</ul>
 	</div></article>
-	<article class="slide" id="JavaScript"><div>
-		<p><strong>JavaScript</strong> - динамический язык программирования. Чаще всего используется в браузерах для добавление интерактивности веб-страницам.</p>
+<!-- 	<article class="slide" id="JavaScript"><div>
+	<p><strong>JavaScript</strong> - динамический язык программирования. Чаще всего используется в браузерах для добавление интерактивности веб-страницам.</p>
 
-		<ul>
-			<p class="indented"><strong>HTML</strong> - структура</p>
-			<p class="indented"><strong>CSS</strong> - вид</p>
-			<p class="indented"><strong>JavaScript</strong> - поведение</p>
-		</ul>
+	<ul>
+		<p class="indented"><strong>HTML</strong> - структура</p>
+		<p class="indented"><strong>CSS</strong> - вид</p>
+		<p class="indented"><strong>JavaScript</strong> - поведение</p>
+	</ul>
 
-		<p class="centered">JavaScript - не Java</p>
-		<style>
-			#JavaScript .centered{
-				text-align: center;
-				font-weight: bold;
-			}
-			#JavaScript .indented{
-				/*margin-left: 10px;*/
-				margin-bottom: 10px;
-			}
-		</style>
-	</div></article>
-	<article class="slide"><div>
-		<h2>Немного истории</h2>
+	<p class="centered">JavaScript - не Java</p>
+	<style>
+		#JavaScript .centered{
+			text-align: center;
+			font-weight: bold;
+		}
+		#JavaScript .indented{
+			/*margin-left: 10px;*/
+			margin-bottom: 10px;
+		}
+	</style>
+</div></article> -->
+	<article class="slide" lang="ru"><div>
+		<h2>История</h2>
 
 		<dl>
 			<dt>1995</dt>
@@ -106,12 +105,14 @@
 		<style>
 			dt{
 				text-indent: -2em;
+				font-weight: bold;
 			}
 			dt::before{
-				content: '\2022\00A0\00A0';
+				content: '\2014\00A0\00A0';
 				display: inline-block;
 				width: 2em;
 				color: #BBB;
+				font-weight: normal;
 				text-align: right;
 			}
 			dd{
@@ -121,37 +122,85 @@
 	</div></article>
 	<article class="slide" id="JSEqualsECMA"><div>
 		<h2>JavaScript === ECMAScript ?</h2>
-		<p class="next">JavaScript = ECMAScript + DOM + BOM;</p>
+		<mark class="next">JavaScript = <span class="es">ECMAScript</span> + <span class="dom">DOM</span> + <span class="bom">BOM</span>;</mark>
 		<style>
-			#JSEqualsECMA p{
+			#JSEqualsECMA mark{
+				display: block;
 				text-align: center;
 				margin-top: 150px;
 				font-size: 44px;
 			}
 		</style>
 	</div></article>
-	<article class="slide"><div>
-		<h2>Lists in English typography</h2>
-		<ol>
-			<li>Locavore umami vegan helvetica</li>
-			<li>Fingerstache kale chips</li>
-			<li>Keytar sriracha gluten-free</li>
-		</ol>
+	<article class="slide" id="scripts" lang="ru"><div>
+		<h2>Подключение скриптов</h2>
+
+		<p>Подключение с помощью тега <code>&lt;script&gt;</code></p>
+
 		<ul>
-			<li>Ennui keffiyeh thundercats</li>
-			<li>Jean shorts biodiesel</li>
-			<li>Terry richardson, swag blog</li>
+			<li>Встроенный скрипт <mark>(embedded)</mark> </li>
+			<li>Внешний скрипт <mark>(external)</mark> </li>
 		</ul>
+
 	</div></article>
-	<article class="slide"><div>
-		<h2>Quote</h2>
-		<figure>
-			<blockquote>
-				<p>Typewriter etsy messenger bag fingerstache, aesthetic vinyl semiotics twee DIY forage chillwave. Thundercats ennui messenger bag, squid carles chillwave shoreditch pickled cliche letterpress.</p>
-			</blockquote>
-			<figcaption>Author Name</figcaption>
-		</figure>
-		<p>DIY beard locavore occupy salvia, whatever single-origin coffee fanny pack 3 wolf moon typewriter gastropub kale chips.</p>
+	<article class="slide" id="embedded"><div>
+		<h2>Встроенный</h2>
+
+		<code>index.html</code>
+
+		<pre>
+			<code>	<mark>&lt;script></mark></code>
+			<code>		alert('Hello, world!');</code>
+			<code>	<mark>&lt;/script></mark></code>
+		</pre>
+
+		<style>
+			#embedded p{
+				/*margin-bottom: 50px;*/
+			}
+			#embedded pre{
+				margin-top: 50px;
+			}
+			#embedded code{
+				line-height: 1.5;
+			}
+		</style>
+	</div></article>
+	<article class="slide" id="external"><div>
+		<h2>Внешний</h2>
+
+		<code>index.html</code>
+
+		<pre>
+			<code>	&lt;script <mark>src="script.js"</mark>>&lt;/script></code>
+		</pre>
+
+		<code>script.js</code>
+
+		<pre>
+			<code>	alert('Hello, world!');</code>
+			<!-- <code>	</code> -->
+		</pre>
+
+		<style>
+			#external p{
+				/*margin-bottom: 50px;*/
+			}
+			#external pre{
+				margin-top: 50px;
+			}
+			#external code{
+				line-height: 1.5;
+			}
+		</style>
+	</div></article>
+	<article class="slide" id="tagPlacement" lang="ru"><div>
+		<h2>Размещение тега script</h2>
+
+		<ul>
+			<li>Интуиция подсказывает, что нужно размещать в <code>head</code></li>
+			<li>Хорошая практика - в конце тега <code>body</code></li>
+		</ul>
 	</div></article>
 	<article class="slide"><div>
 		<h2>Table</h2>
