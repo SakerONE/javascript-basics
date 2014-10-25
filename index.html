@@ -11,6 +11,16 @@
 			display: -webkit-box;
 			-webkit-box-pack: center;
 		}
+		.just-holder{
+			display: -webkit-box;
+			-webkit-box-pack: justify;
+		}
+		.good{
+			color: green;
+		}
+		.bad{
+			color: red;
+		}
 	</style>
 </head>
 <body class="list">
@@ -358,18 +368,57 @@
 		<h2>Инициализация</h2>
 
 		<!-- <div class="holder"> -->
-			<pre>
-				<code><mark >var</mark> myVar; <mark class="comment">// undefined</mark></code>
-			</pre>
+
+			<h3 class="bad">Плохо</h3>
 
 			<pre>
-				<code><mark >var</mark> name = "Артем";</code>
+				<code><mark >var</mark> foo; <mark class="comment">// undefined</mark></code>
+				<code>foo = 'bar';</code>
 			</pre>
 
+			<h3 class="good">Хорошо</h3>
+
 			<pre>
-				<code><mark >var</mark> age = 24;</code>
+				<code><mark >var</mark> foo = 'bar';</mark></code>
 			</pre>
 		<!-- </div> -->
+
+		<style>
+			#initialization .holder{
+				/*-webkit-box-align: center;*/
+			}
+			#initialization pre{
+				/*margin: 0 50px;*/
+			}
+		</style>
+
+	</div></article>
+	<article class="slide" lang="ru" id="singleVar"><div>
+		<h2>Единственная инструкция var</h2>
+
+		<!-- <div class="holder"> -->
+			<h3 class="bad">Плохо</h3>
+			<pre>
+				<code>var name = 'Артем';</code>
+				<code>var age = 24;</code>
+			</pre>
+
+			<h3 class="good">Хорошо</h3>
+
+			<pre>
+				<code>var name = 'Артем'<mark>,</mark></code>
+				<code>	age = 24;</code>
+			</pre>
+		<!-- </div> -->
+
+		<style>
+			#singleVar .holder{
+				/*-webkit-box-align: center;*/
+			}
+			#singleVar pre{
+				/*margin: 0 50px;*/
+			}
+		</style>
 
 	</div></article>
 	<article class="slide" lang="ru" id="dynamicTyping"><div>
@@ -406,6 +455,66 @@
 				font-size: 22px;
 			}
 		</style>
+	</div></article>
+	<article class="slide" lang="ru" id="noBlockScope"><div>
+		<h2>Нету блочной области видимости</h2>
+
+		<pre>
+			<code>{</code>
+			<code>	var foo = 'bar';</code>
+			<code>}</code>
+			<code> </code>
+			<code>console.log(foo); <mark class="comment">// bar</mark> </code>
+		</pre>
+
+		<style>
+			#scope p{
+				margin-bottom: 20px;
+			}
+			#scope .important{
+				font-size: 22px;
+			}
+		</style>
+	</div></article>
+	<article class="slide" lang="ru" id="dataTypes"><div>
+		<h2>Типы данных</h2>
+
+		<div class="holder">
+			<div class="column">
+				<h3>5 примитивных типов</h3>
+
+				<ul>
+					<li>Number</li>
+					<li>String</li>
+					<li>Boolean</li>
+					<li>undefined</li>
+					<li>null</li>
+				</ul>
+			</div>
+
+			<div class="column">
+				<h3>1 комплексный</h3>
+
+				<ul>
+					<li>Object</li>
+				</ul>
+
+			</div>
+		</div>
+
+		<style>
+			#dataTypes h3{
+				font-weight: bold;
+			}
+			#dataTypes .holder{
+				-webkit-box-pack: start;
+			}
+			#dataTypes .column{
+				margin-right: 200px;
+				/*margin: 0 100px;*/
+			}
+		</style>
+
 	</div></article>
 	<article class="slide"><div>
 		<h2>Table</h2>
