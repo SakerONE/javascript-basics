@@ -6,6 +6,12 @@
 	<meta name="viewport" content="width=792, user-scalable=no">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<link rel="stylesheet" href="components/shower-ribbon/styles/screen.css">
+	<style>
+		.holder{
+			display: -webkit-box;
+			-webkit-box-pack: center;
+		}
+	</style>
 </head>
 <body class="list">
 	<header class="caption">
@@ -161,9 +167,6 @@
 			#embedded pre{
 				margin-top: 50px;
 			}
-			#embedded code{
-				line-height: 1.5;
-			}
 		</style>
 	</div></article>
 	<article class="slide" id="external"><div>
@@ -189,18 +192,220 @@
 			#external pre{
 				margin-top: 50px;
 			}
-			#external code{
-				line-height: 1.5;
+		</style>
+	</div></article>
+	<article class="slide tag-placement" lang="ru"><div>
+		<h2>Размещение тега script</h2>
+
+		<p>Интуиция подсказывает, что нужно размещать в теге <code>head</code></p>
+
+		<pre>
+			<code>&lt;head></code>
+			<code>	&lt;link rel="stylesheet" href="styles.css"></code>
+			<code>	<mark>&lt;script src="script.js">&lt;/script></mark></code>
+			<code>&lt;/head></code>
+			<code>&lt;body></code>
+			<code>	<mark>&lt;!-- Rendering content --></mark></code>
+			<code>&lt;/body></code>
+		</pre>
+
+		<style>
+			.slide.tag-placement p{
+				margin-bottom: 20px;
+			}
+		</style>
+
+	</div></article>
+	<article class="slide tag-placement" lang="ru"><div>
+		<h2>Размещение тега script</h2>
+
+		<p>Хорошая практика - подключать <code>script</code> в конце тега <code>body</code></p>
+
+		<pre>
+			<code>&lt;head></code>
+			<code>	&lt;link rel="stylesheet" href="styles.css"></code>
+			<code>&lt;/head></code>
+			<code>&lt;body></code>
+			<code>	<mark>&lt;!-- Rendering content --></mark></code>
+			<code>	<mark>&lt;script src="script.js">&lt;/script></mark></code>
+			<code>&lt;/body></code>
+		</pre>
+	</div></article>
+	<article class="slide" lang="ru" id="codeStructure"><div>
+		<h2>Структура кода</h2>
+
+		<p>JavaScript код - набор команд, которые должен выполнить браузер.</p>
+		<p>Такие команды называются инструкциями или операторами <mark>(statements)</mark>.</p>
+
+		<div class="holder">
+			<pre>
+				<code>statement;</code>
+				<code>statement;</code>
+				<code>statement;</code>
+			</pre>
+		</div>
+
+		<style>
+			#codeStructure p{
+				font-size: 23px;
 			}
 		</style>
 	</div></article>
-	<article class="slide" id="tagPlacement" lang="ru"><div>
-		<h2>Размещение тега script</h2>
+	<article class="slide" lang="ru" id="blockStatement"><div>
+		<h2>Составная инструкция (block statement)</h2>
+
+		<p>Позволяет объеденять несколько инструкций в одну.</p>
+
+		<div class="holder">
+			<pre>
+				<code><mark class="important">{</mark></code>
+				<code>	statement;</code>
+				<code>	statement;</code>
+				<code>	statement;</code>
+				<code><mark class="important">}</mark></code>
+			</pre>
+		</div>
+
+	</div></article>
+	<article class="slide" lang="ru"><div>
+		<h2>Переменные</h2>
+
+		<p>Переменная - именованная ячейка памяти.</p>
+		<p>Объявляется с помощью ключевого слова <code>var</code> и <mark>идентификатора</mark>.</p>
+
+		<div class="holder">
+			<pre>
+				<code><mark >var</mark> myVar;</code>
+			</pre>
+		</div>
+	</div></article>
+	<article class="slide" lang="ru" id="identifiers"><div>
+		<h2>Идентификаторы</h2>
+
+		<!-- <p>Используются для наименования переменных, функций, свойств, параметров</p> -->
 
 		<ul>
-			<li>Интуиция подсказывает, что нужно размещать в <code>head</code></li>
-			<li>Хорошая практика - в конце тега <code>body</code></li>
+			<li>Длина идентификатора – один и больше символов</li>
+			<li>Символы: <mark>буква</mark>, <mark>цифра</mark>, подчеркивание (<mark>_</mark>) или доллар (<mark>$</mark>)</li>
+			<li>Цифра не может быть первой</li>
+			<li>По соглашению пишутся в стиле <mark>camelCase</mark></li>
+			<li><mark>Ключевые</mark> и <mark>зарезервированные</mark> слова нельзя использовать в качестве идентификаторов</li>
 		</ul>
+
+	</div></article>
+	<article class="slide" lang="ru" id="keywords"><div>
+		<h2>Ключевые слова</h2>
+
+		<div class="columned">
+			break<br>
+			do<br>
+			instanceof<br>
+			typeof<br>
+			case<br>
+			else<br>
+			new<br>
+			<mark>var</mark><br>
+			catch<br>
+			finally<br>
+			return<br>
+			void<br>
+			continue<br>
+			for<br>
+			switch<br>
+			while<br>
+			debugger<br>
+			function<br>
+			this<br>
+			with<br>
+			default<br>
+			if<br>
+			throw<br>
+			delete<br>
+			in<br>
+			try<br>
+		</div>
+
+		<style>
+			#keywords .columned{
+				-webkit-column-count: 4;
+			}
+		</style>
+
+	</div></article>
+	<article class="slide" lang="ru" id="reserved"><div>
+		<h2>Зарезервированные слова</h2>
+
+		<div class="columned">
+			implements<br>
+			package<br>
+			public<br>
+			interface<br>
+			private<br>
+			static<br>
+			let<br>
+			protected<br>
+			yield
+		</div>
+
+		<style>
+			#reserved .columned{
+				-webkit-column-count: 3;
+			}
+		</style>
+
+	</div></article>
+	<article class="slide" lang="ru" id="initialization"><div>
+		<h2>Инициализация</h2>
+
+		<!-- <div class="holder"> -->
+			<pre>
+				<code><mark >var</mark> myVar; <mark class="comment">// undefined</mark></code>
+			</pre>
+
+			<pre>
+				<code><mark >var</mark> name = "Артем";</code>
+			</pre>
+
+			<pre>
+				<code><mark >var</mark> age = 24;</code>
+			</pre>
+		<!-- </div> -->
+
+	</div></article>
+	<article class="slide" lang="ru" id="dynamicTyping"><div>
+		<h2>Динамическая типизация</h2>
+
+		<p>Тип переменной определяется в момент присваивания значения</p>
+
+			<pre>
+				<code><mark >var</mark> myVar = 1;</code>
+				<code>myVar = "foo";</code>
+				<code>myVar = true;</code>
+			</pre>
+	</div></article>
+	<article class="slide" lang="ru" id="scope"><div>
+		<h2>Область видимости</h2>
+
+		<p>Область видимости переменной - функция в которой она объявлена.</p>
+
+		<pre>
+			<code>function foo(){</code>
+			<code>	var bar = 1;</code>
+			<code>	<mark class="comment">// do smth with bar</mark></code>
+			<code>}</code>
+			<code>foo();</code>
+			<code>	</code>
+			<code>console.log(bar); <mark class="important">Uncaught ReferenceError: bar is not defined </mark></code>
+		</pre>
+
+		<style>
+			#scope p{
+				margin-bottom: 20px;
+			}
+			#scope .important{
+				font-size: 22px;
+			}
+		</style>
 	</div></article>
 	<article class="slide"><div>
 		<h2>Table</h2>
