@@ -543,7 +543,7 @@
 	<article class="slide" lang="ru"><div>
 		<h2>undefined</h2>
 		<ul>
-			<li>Дефолтное значение для переменных и параметров функции</li>
+			<li>Значение по умолчанию для переменных и параметров функции</li>
 			<li>Значение отсутствующих свойств объекта</li>
 		</ul>
 
@@ -575,96 +575,208 @@
 		</pre>
 
 	</div></article>
-	<article class="slide"><div>
-		<h2>Number</h2>
+	<article class="slide" lang="ru" id="number"><div>
+		<h2>Числа</h2>
+
 		<ul>
-			<li></li>
+			<li>Один тип для целых и дробных чисел</li>
+			<li>Хранятся в 64-битном формате</li>
 		</ul>
-		<!-- <p>Typewriter etsy messenger bag fingerstache.</p> -->
+
+		<!-- <div class="holder"> -->
+			<pre>
+				<code>1 <mark class="comment">// 1</mark></code>
+				<code>1.12 <mark class="comment">// 1.12</mark></code>
+				<code>0xff <mark class="comment">// 255</mark></code>
+				<code>1e3 <mark class="comment">// 1000</mark></code>
+				<code>1e-3 <mark class="comment">// 0.001</mark></code>
+			</pre>
+		<!-- </div> -->
+
+		<style>
+			#number code:before{
+				/*content: none;*/
+			}
+		</style>
+
+	</div></article>
+	<article class="slide" lang="ru"><div>
+		<h2>Потеря точности</h2>
+
+		<pre>
+			<code>0.1 + 0.2 <mark class="comment">// 0.30000000000000004</mark></code>
+			<code>9999999999999999 <mark class="comment">// 10000000000000000</mark></code>
+		</pre>
+
+
+		<p>
+			<a href="http://floating-point-gui.de/">http://floating-point-gui.de/</a>
+		</p>
+
+	</div></article>
+	<article class="slide" lang="ru" id="nan"><div>
+		<h2>NaN</h2>
+
+		<p>Специальное значение: Not a Number</p>
+<!-- 		<ul>
+	<li>Результат ошибочных арифметических операций</li>
+	<li>Любая операция с NaN возвращает NaN</li>
+	<li>NaN не равно ничему, включая себя</li>
+</ul>
+ -->
+		<pre>
+			<code>"a" * 3 <mark class="comment">// NaN</mark></code>
+			<code>NaN == NaN <mark class="comment">// false</mark></code>
+			<code>isNaN(NaN) <mark class="comment">// true</mark></code>
+			<code>typeof NaN <mark class="comment">// "number"</mark></code>
+		</pre>
+
+		<style>
+			#nan ul,
+			#nan pre{
+				margin-bottom: 10px;
+			}
+		</style>
+
+	</div></article>
+	<article class="slide" lang="ru"><div>
+		<h2>Функция Number</h2>
+
+		<p>Конвертирует значение в число</p>
+<!-- 		<ul>
+	<li>Возвращает NaN, если значение не может быть сконвертировано</li>
+	<li>То же делает унарный оператор <code>+</code></li>
+</ul>
+ -->
+		<pre>
+			<code>Number("10") <mark class="comment">// 10</mark></code>
+			<code>Number("10.11") <mark class="comment">// 10.11</mark></code>
+			<code>Number("10a") <mark class="comment">// NaN</mark></code>
+			<code>+"10" <mark class="comment">// 10</mark></code>
+		</pre>
+
+	</div></article>
+	<article class="slide" lang="ru"><div>
+		<h2>Функция parseInt</h2>
+
+<!-- 		<ul>
+	<li>Первой должна быть цифра</li>
+	<li>Останавливаются на первом нецифровом символе</li>
+	<li>Лучше всегда указывать основание системы счисления</li>
+</ul>
+ -->
+		<pre>
+			<code>parseInt("10a", 10) <mark class="comment">// 10</mark></code>
+			<code>parseInt("a10", 10) <mark class="comment">// NaN</mark></code>
+			<code>parseInt("010") <mark class="comment">// в некоторых браузерах 8</mark></code>
+			<code>parseInt("010", 10) <mark class="comment">// во всех 10</mark></code>
+		</pre>
+
 	</div></article>
 	<article class="slide"><div>
-		<h2>Numbered code listing</h2>
+		<h2>Строки</h2>
+		<ul>
+			<li>Последовательность 16-битных символов</li>
+			<li>Двойные или одинарные кавычки</li>
+			<li>Нету <code>char</code></li>
+		</ul>
+	</div></article>
+	<article class="slide"><div>
+		<h2>Длина строки</h2>
+
 		<pre>
-			<code>&lt;html lang="en"&gt;</code>
-			<code><mark>&lt;head&gt;</mark> <mark class="comment">&lt;!--Comment--&gt;</mark></code>
-			<code>	&lt;title&gt;Shower&lt;/title&gt;</code>
-			<code>	&lt;meta charset="<mark class="important">UTF-8</mark>"&gt;</code>
-			<code>	&lt;link rel="stylesheet" href="s/screen.css"&gt;</code>
-			<code>	&lt;script src="j/jquery.js"&gt;&lt;/script&gt;</code>
-			<code><mark>&lt;/head&gt;</mark></code>
+			<code>var myString = "my string";</code>
+			<code>console.log(<mark>myString.length</mark>); <mark class="comment">// 9</mark></code>
+		</pre>
+
+	</div></article>
+	<article class="slide"><div>
+		<h2>Строки как массивы</h2>
+
+		<pre>
+			<code>var myString = "my string";</code>
+			<code>console.log(<mark>myString[0]</mark>); <mark class="comment">// "m"</mark></code>
 		</pre>
 	</div></article>
 	<article class="slide"><div>
-		<h2>Plain code listing</h2>
-		<pre><code>&lt;html lang="en"&gt;
-<mark>&lt;head&gt;</mark> <mark class="comment">&lt;!--Comment--&gt;</mark>
-	&lt;title&gt;Shower&lt;/title&gt;
-	&lt;meta charset="<mark class="important">UTF-8</mark>"&gt;
-	&lt;link rel="stylesheet" href="s/screen.css"&gt;
-	&lt;script src="j/jquery.js"&gt;&lt;/script&gt;
-<mark>&lt;/head&gt;</mark></code></pre>
+		<h2>Строки неизменяемы</h2>
+
+		<pre>
+			<code>var myString = "my string";</code>
+			<code><mark>myString[6] = "o";</mark></code>
+			<code>console.log(myString); <mark class="comment">// "my string"</mark></code>
+		</pre>
 	</div></article>
-	<article class="slide shout"><div>
-		<h2>
-			You Can<br>
-			Shout This Way
-		</h2>
-		<footer>
-			<p>Typewriter etsy messenger bag fingerstache.</p>
-		</footer>
+	<article class="slide" lang="ru" id="stringMethods"><div>
+		<h2>Методы</h2>
+
+		<div class="columned">
+			charAt<br>
+			indexOf<br>
+			lastIndexOf<br>
+			match<br>
+			replace<br>
+			search<br>
+			splice<br>
+			split<br>
+			substring<br>
+			toLowerCase<br>
+			toUpperCase
+		</div>
+
+		<style>
+			#stringMethods .columned{
+				-webkit-column-count: 4;
+			}
+		</style>
 	</div></article>
-	<article class="slide shout"><div>
-		<h2><a href="">Linked Shout</a></h2>
+	<article class="slide" lang="ru" id="stringFunction"><div>
+		<h2>Функция String</h2>
+
+		<p>
+			Конвертирует значение в строку.
+		</p>
+
+		<pre>
+			<code><mark>String(10)</mark> <mark class="comment">// "10"</mark></code>
+		</pre>
 	</div></article>
-	<article class="slide shout grow"><div>
-		<h2>Growing Shout</h2>
+	<article class="slide" lang="ru" id="booleans"><div>
+		<h2>Логический тип</h2>
+
+		<ul>
+			<li>true</li>
+			<li>false</li>
+		</ul>
 	</div></article>
-	<article class="slide shout shrink"><div>
-		<h2>Shrinking Shout</h2>
+	<article class="slide" lang="ru" id="booleanFunction"><div>
+		<h2>Функция Boolean</h2>
+
+		<p>Конвертирует значение в логическое.</p>
+
+		<pre>
+			<code><mark>Boolean(value)</mark></code>
+		</pre>
+
+		<p>Или</p>
+
+		<pre>
+			<code><mark>!!value</mark></code>
+		</pre>
 	</div></article>
-	<article class="slide cover"><div>
-		<img src="pictures/exact.png" alt="">
-	</div></article>
-	<article class="slide cover w"><div>
-		<img src="pictures/wide.png" alt="">
-	</div></article>
-	<article class="slide cover h"><div>
-		<img src="pictures/tall.png" alt="">
-		<footer>
-			<p>Typewriter etsy messenger bag fingerstache.</p>
-		</footer>
-	</div></article>
-	<article class="slide cover h"><div>
-		<img src="pictures/wide.png" alt="">
-	</div></article>
-	<article class="slide cover w"><div>
-		<img src="pictures/tall.png" alt="">
-	</div></article>
-	<article class="slide shout"><div>
-		<img src="pictures/square.png" alt="" class="place t l">
-		<img src="pictures/square.png" alt="" class="place t">
-		<img src="pictures/square.png" alt="" class="place t r">
-		<img src="pictures/square.png" alt="" class="place l">
-		<img src="pictures/square.png" alt="" class="place">
-		<img src="pictures/square.png" alt="" class="place r">
-		<img src="pictures/square.png" alt="" class="place b l">
-		<img src="pictures/square.png" alt="" class="place b">
-		<img src="pictures/square.png" alt="" class="place b r">
-	</div></article>
-	<article class="slide" data-timing="00:03"><div>
-		<h2>Timer</h2>
-		<p>Three seconds to go.</p>
-	</div></article>
-	<article class="slide"><div>
-		<h2>List navigation</h2>
-		<ol>
-			<li>Ennui keffiyeh thundercats</li>
-			<li class="next">Jean shorts biodiesel</li>
-			<li class="next">Terry richardson, swag blog</li>
-			<li class="next">Locavore umami vegan helvetica</li>
-			<li class="next">Fingerstache kale chips</li>
-		</ol>
-		<p class="next">Before they sold out master</p>
+	<article class="slide" lang="ru"><div>
+		<h2>Ложные значения</h2>
+
+		<ul>
+			<li><code>false</code></li>
+			<li><code>null</code></li>
+			<li><code>undefined</code></li>
+			<li><code>""</code></li>
+			<li><code>0</code></li>
+			<li><code>NaN</code></li>
+		</ul>
+
+		<p>Все остальные значения истинные.</p>
 	</div></article>
 	<!-- <p class="badge"><a href="https://github.com/shower/shower">Fork me on Github</a></p> -->
 	<!--
