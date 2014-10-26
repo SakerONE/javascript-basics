@@ -372,7 +372,7 @@
 			<h3 class="bad">Плохо</h3>
 
 			<pre>
-				<code><mark >var</mark> foo; <mark class="comment">// undefined</mark></code>
+				<code><mark >var</mark> foo;</code>
 				<code>foo = 'bar';</code>
 			</pre>
 
@@ -420,17 +420,6 @@
 			}
 		</style>
 
-	</div></article>
-	<article class="slide" lang="ru" id="dynamicTyping"><div>
-		<h2>Динамическая типизация</h2>
-
-		<p>Тип переменной определяется в момент присваивания значения</p>
-
-			<pre>
-				<code><mark >var</mark> myVar = 1;</code>
-				<code>myVar = "foo";</code>
-				<code>myVar = true;</code>
-			</pre>
 	</div></article>
 	<article class="slide" lang="ru" id="scope"><div>
 		<h2>Область видимости</h2>
@@ -516,41 +505,82 @@
 		</style>
 
 	</div></article>
+	<article class="slide" lang="ru" id="dynamicTyping"><div>
+		<h2>Динамическая типизация</h2>
+
+		<p>Тип переменной определяется в момент присваивания значения</p>
+
+			<pre>
+				<code><mark >var</mark> myVar = 1;</code>
+				<code>myVar = "foo";</code>
+				<code>myVar = true;</code>
+			</pre>
+	</div></article>
+	<article class="slide" lang="ru" id="typeof"><div>
+		<h2>Оператор typeof</h2>
+
+		<p>Определяет тип переменной</p>
+
+		<pre>
+			<code><mark>typeof</mark> 1; <mark class="comment">// "number"</mark></code>
+			<code><mark>typeof</mark> "some string"; <mark class="comment">// "string"</mark></code>
+			<code><mark>typeof</mark> true; <mark class="comment">// "boolean"</mark></code>
+			<code><mark>typeof</mark> undefined; <mark class="comment">// "undefined"</mark></code>
+			<code><mark>typeof</mark> function(){}; <mark class="comment">// "function"</mark></code>
+		</pre>
+
+		<p>Для всего остального <code>typeof</code> возвращает <code>"object"</code>, в том числе и для <code>null</code>.</p>
+
+		<style>
+			#typeof p,
+			#typeof pre,
+			#typeof h2{
+				margin-bottom: 15px;
+			}
+		</style>
+	</div></article>
+
+	<article class="slide" lang="ru"><div>
+		<h2>undefined</h2>
+		<ul>
+			<li>Дефолтное значение для переменных и параметров функции</li>
+			<li>Значение отсутствующих свойств объекта</li>
+		</ul>
+
+		<pre>
+			<code>var myVar,</code>
+			<code>	o = {foo: 1};</code>
+			<code> </code>
+			<code>typeof myVar; <mark class="comment">// undefined</mark></code>
+			<code>typeof o.bar; <mark class="comment">// undefined</mark></code>
+		</pre>
+
+	</div></article>
 	<article class="slide"><div>
-		<h2>Table</h2>
-		<table>
-		<tr>
-			<th scope="col">Locavore</th>
-			<th>Umami</th>
-			<th>Helvetica</th>
-			<th>Vegan</th>
-		</tr>
-		<tr>
-			<th scope="row">Fingerstache</th>
-			<td>Kale</td>
-			<td>Chips</td>
-			<td>Keytar</td>
-		</tr>
-		<tr>
-			<th scope="row">Sriracha</th>
-			<td>Gluten-free</td>
-			<td>Ennui</td>
-			<td>Keffiyeh</td>
-		</tr>
-		<tr>
-			<th scope="row">Thundercats</th>
-			<td>Jean</td>
-			<td>Shorts</td>
-			<td>Biodiesel</td>
-		</tr>
-		<tr>
-			<th scope="row">Terry</th>
-			<td>Richardson</td>
-			<td>Swag</td>
-			<td>Blog</td>
-		</tr>
-		</table>
-		<p>Typewriter etsy messenger bag fingerstache.</p>
+		<h2>null</h2>
+
+		Значение переменных которые ничего не содержат.
+
+		<h3 class="bad">Плохо</h3>
+
+		<pre>
+			<code>var activeItemIndex = 1;</code>
+			<code>activeItemIndex = <mark>undefined</mark>;</code>
+		</pre>
+
+		<h3 class="good">Хорошо</h3>
+		<pre>
+			<code>var activeItemIndex = 1;</code>
+			<code>activeItemIndex = <mark>null</mark>;</code>
+		</pre>
+
+	</div></article>
+	<article class="slide"><div>
+		<h2>Number</h2>
+		<ul>
+			<li></li>
+		</ul>
+		<!-- <p>Typewriter etsy messenger bag fingerstache.</p> -->
 	</div></article>
 	<article class="slide"><div>
 		<h2>Numbered code listing</h2>
