@@ -71,19 +71,19 @@
 			}
 		</style>
 	</div></article>
-	<article class="slide" lang="ru"><div>
-		<h2>План</h2>
-		<ul>
-			<li>История</li>
-			<li>Подключение скриптов</li>
-			<li>Переменные</li>
-			<li>Типы данных</li>
-			<li>Операторы</li>
-			<li>Условные операторы</li>
-			<li>Циклы</li>
-			<li>Практика</li>
-		</ul>
-	</div></article>
+<!-- 	<article class="slide" lang="ru"><div>
+	<h2>План</h2>
+	<ul>
+		<li>История</li>
+		<li>Подключение скриптов</li>
+		<li>Переменные</li>
+		<li>Типы данных</li>
+		<li>Операторы</li>
+		<li>Условные операторы</li>
+		<li>Циклы</li>
+		<li>Практика</li>
+	</ul>
+</div></article> -->
 <!-- 	<article class="slide" id="JavaScript"><div>
 	<p><strong>JavaScript</strong> - динамический язык программирования. Чаще всего используется в браузерах для добавление интерактивности веб-страницам.</p>
 
@@ -105,44 +105,44 @@
 		}
 	</style>
 </div></article> -->
-	<article class="slide" lang="ru" id="history"><div>
-		<h2>История</h2>
+<!-- 	<article class="slide" lang="ru" id="history"><div>
+	<h2>История</h2>
 
-		<dl>
-			<dt>1995</dt>
-			<dd>
-				Sun Microsystems, Java, HotJava<br>
-				Netscape, LiveScript<br>
-				Sun|Netscape Alliance => JavaScript
-			</dd>
-			<dt>1996</dt>
-			<dd>
-				Microsoft, JScript
-			</dd>
-			<dt>1997</dt>
-			<dd>
-				ECMAScript
-			</dd>
-		</dl>
+	<dl>
+		<dt>1995</dt>
+		<dd>
+			Sun Microsystems, Java, HotJava<br>
+			Netscape, LiveScript<br>
+			Sun|Netscape Alliance => JavaScript
+		</dd>
+		<dt>1996</dt>
+		<dd>
+			Microsoft, JScript
+		</dd>
+		<dt>1997</dt>
+		<dd>
+			ECMAScript
+		</dd>
+	</dl>
 
-		<style>
-			#history dt{
-				text-indent: -2em;
-				font-weight: bold;
-			}
-			#history dt::before{
-				content: '\2014\00A0\00A0';
-				display: inline-block;
-				width: 2em;
-				color: #BBB;
-				font-weight: normal;
-				text-align: right;
-			}
-			#history dd{
-				margin-left: 30px;
-			}
-		</style>
-	</div></article>
+	<style>
+		#history dt{
+			text-indent: -2em;
+			font-weight: bold;
+		}
+		#history dt::before{
+			content: '\2014\00A0\00A0';
+			display: inline-block;
+			width: 2em;
+			color: #BBB;
+			font-weight: normal;
+			text-align: right;
+		}
+		#history dd{
+			margin-left: 30px;
+		}
+	</style>
+</div></article> -->
 	<article class="slide" id="JSEqualsECMA"><div>
 		<h2>JavaScript === ECMAScript ?</h2>
 		<mark class="next">JavaScript = <span class="es">ECMAScript</span> + <span class="dom">DOM</span> + <span class="bom">BOM</span>;</mark>
@@ -252,7 +252,7 @@
 		<h2>Структура кода</h2>
 
 		<p>JavaScript код - набор команд, которые должен выполнить браузер.</p>
-		<p>Такие команды называются инструкциями или операторами <mark>(statements)</mark>.</p>
+		<p>Такие команды называются инструкциями <mark>(statements)</mark>.</p>
 
 		<div class="holder">
 			<pre>
@@ -296,81 +296,79 @@
 			</pre>
 		</div>
 	</div></article>
-	<article class="slide" lang="ru" id="identifiers"><div>
-		<h2>Идентификаторы</h2>
+<!-- 	<article class="slide" lang="ru" id="identifiers"><div>
+	<h2>Идентификаторы</h2>
 
-		<!-- <p>Используются для наименования переменных, функций, свойств, параметров</p> -->
+	<ul>
+		<li>Длина идентификатора – один и больше символов</li>
+		<li>Символы: <mark>буква</mark>, <mark>цифра</mark>, подчеркивание (<mark>_</mark>) или доллар (<mark>$</mark>)</li>
+		<li>Цифра не может быть первой</li>
+		<li>По соглашению пишутся в стиле <mark>camelCase</mark></li>
+		<li><mark>Ключевые</mark> и <mark>зарезервированные</mark> слова нельзя использовать в качестве идентификаторов</li>
+	</ul>
 
-		<ul>
-			<li>Длина идентификатора – один и больше символов</li>
-			<li>Символы: <mark>буква</mark>, <mark>цифра</mark>, подчеркивание (<mark>_</mark>) или доллар (<mark>$</mark>)</li>
-			<li>Цифра не может быть первой</li>
-			<li>По соглашению пишутся в стиле <mark>camelCase</mark></li>
-			<li><mark>Ключевые</mark> и <mark>зарезервированные</mark> слова нельзя использовать в качестве идентификаторов</li>
-		</ul>
+</div></article> -->
+<!-- 	<article class="slide" lang="ru" id="keywords"><div>
+	<h2>Ключевые слова</h2>
 
-	</div></article>
-	<article class="slide" lang="ru" id="keywords"><div>
-		<h2>Ключевые слова</h2>
+	<div class="columned">
+		break<br>
+		do<br>
+		instanceof<br>
+		typeof<br>
+		case<br>
+		else<br>
+		new<br>
+		<mark>var</mark><br>
+		catch<br>
+		finally<br>
+		return<br>
+		void<br>
+		continue<br>
+		for<br>
+		switch<br>
+		while<br>
+		debugger<br>
+		function<br>
+		this<br>
+		with<br>
+		default<br>
+		if<br>
+		throw<br>
+		delete<br>
+		in<br>
+		try<br>
+	</div>
 
-		<div class="columned">
-			break<br>
-			do<br>
-			instanceof<br>
-			typeof<br>
-			case<br>
-			else<br>
-			new<br>
-			<mark>var</mark><br>
-			catch<br>
-			finally<br>
-			return<br>
-			void<br>
-			continue<br>
-			for<br>
-			switch<br>
-			while<br>
-			debugger<br>
-			function<br>
-			this<br>
-			with<br>
-			default<br>
-			if<br>
-			throw<br>
-			delete<br>
-			in<br>
-			try<br>
-		</div>
+	<style>
+		#keywords .columned{
+			-webkit-column-count: 4;
+		}
+	</style>
 
-		<style>
-			#keywords .columned{
-				-webkit-column-count: 4;
-			}
-		</style>
+</div></article>
+<article class="slide" lang="ru" id="reserved"><div>
+	<h2>Зарезервированные слова</h2>
 
-	</div></article>
-	<article class="slide" lang="ru" id="reserved"><div>
-		<h2>Зарезервированные слова</h2>
+	<div class="columned">
+		implements<br>
+		package<br>
+		public<br>
+		interface<br>
+		private<br>
+		static<br>
+		let<br>
+		protected<br>
+		yield
+	</div>
 
-		<div class="columned">
-			implements<br>
-			package<br>
-			public<br>
-			interface<br>
-			private<br>
-			static<br>
-			let<br>
-			protected<br>
-			yield
-		</div>
+	<style>
+		#reserved .columned{
+			-webkit-column-count: 3;
+		}
+	</style>
 
-		<style>
-			#reserved .columned{
-				-webkit-column-count: 3;
-			}
-		</style>
-
-	</div></article>
+</div></article> -->
 	<article class="slide" lang="ru" id="initialization"><div>
 		<h2>Инициализация</h2>
 
@@ -379,14 +377,14 @@
 			<h3 class="bad">Плохо</h3>
 
 			<pre>
-				<code><mark >var</mark> foo;</code>
-				<code>foo = 'bar';</code>
+				<code>var myVar;</code>
+				<code>myVar <mark>= 'my var'</mark>;</code>
 			</pre>
 
 			<h3 class="good">Хорошо</h3>
 
 			<pre>
-				<code><mark >var</mark> foo = 'bar';</mark></code>
+				<code>var myVar <mark>= 'my var'</mark>;</mark></code>
 			</pre>
 		<!-- </div> -->
 
@@ -875,7 +873,7 @@
 
 		<pre>
 			<code>'абв' + 'где' // 'абвгде'</code>
-			<code>'' + 1 // '1' - компактнее String(value)</code>
+			<code>'' + 1 // '1' - компактнее String(1)</code>
 		</pre>
 	</div></article>
 	<article class="slide" lang="ru"><div>
@@ -908,9 +906,9 @@
 		</pre>
 
 		<pre>
-			<code>"" &amp;&amp; 10 <mark class="comment">// ""</mark></code>
-			<code>true &amp;&amp; "ok" <mark class="comment">// "ok"</mark></code>
+			<code>value &amp;&amp; console.log(value);</code>
 		</pre>
+
 
 		<style>
 			.operators h2{
@@ -922,14 +920,16 @@
 		<h2>||</h2>
 
 		<pre class="no-numbers">
-			<code>Если значение первого операнда истинное</code>
-			<code>	<mark>результат - первый операнд</mark></code>
-			<code>Иначе</code>
+			<code>Если значение первого операнда ложное</code>
 			<code>	<mark>результат - второй операнд</mark></code>
+			<code>Иначе</code>
+			<code>	<mark>результат - первый операнд</mark></code>
 		</pre>
 
 		<pre>
-			<code>some = some || "some";</code>
+			<code>function foo(bar){</code>
+			<code>	bar = bar || "bar";</code>
+			<code>}</code>
 		</pre>
 
 		<style>
