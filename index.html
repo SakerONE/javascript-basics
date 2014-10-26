@@ -21,6 +21,13 @@
 		.bad{
 			color: red;
 		}
+		.operators h2{
+			text-align: center;
+			font-family: 'PT Mono',monospace;
+		}
+		.slide pre.no-numbers :before{
+			content: "";
+		}
 	</style>
 </head>
 <body class="list">
@@ -98,7 +105,7 @@
 		}
 	</style>
 </div></article> -->
-	<article class="slide" lang="ru"><div>
+	<article class="slide" lang="ru" id="history"><div>
 		<h2>История</h2>
 
 		<dl>
@@ -119,11 +126,11 @@
 		</dl>
 
 		<style>
-			dt{
+			#history dt{
 				text-indent: -2em;
 				font-weight: bold;
 			}
-			dt::before{
+			#history dt::before{
 				content: '\2014\00A0\00A0';
 				display: inline-block;
 				width: 2em;
@@ -131,7 +138,7 @@
 				font-weight: normal;
 				text-align: right;
 			}
-			dd{
+			#history dd{
 				margin-left: 30px;
 			}
 		</style>
@@ -777,6 +784,159 @@
 		</ul>
 
 		<p>Все остальные значения истинные.</p>
+	</div></article>
+	<article class="slide" lang="ru"><div>
+		<h2>Конструкторы встроенных типов</h2>
+
+		<p><code>new String()</code>, <code>new Boolean()</code>, <code>new Number()</code></p>
+
+		<pre>
+			<code>var primitiveString = "bar",</code>
+			<code>	objectString = <mark>new String("bar")</mark>;</code>
+			<code> </code>
+			<code><mark>typeof</mark> objectString; <mark class="comment">// "object"</mark></code>
+			<code><mark>typeof</mark> primitiveString; <mark class="comment">// "string"</mark></code>
+			<code>primitiveString.length; <mark class="comment">// 3</mark></code>
+		</pre>
+
+	</div></article>
+	<article class="slide" lang="ru" id="operators"><div>
+		<h2>Операторы</h2>
+
+		<ul>
+			<li>Унарные <code>+"1"</code></li>
+			<li>Бинарные <code>1 + 2</code></li>
+			<li>Тернарный <code>?:</code></li>
+		</ul>
+	</div></article>
+	<article class="slide" lang="ru"><div>
+		<h2>Группы операторов</h2>
+
+		<dl>
+			<dt>Арифметические</dt>
+			<dd>
+				<code>+</code> <code>-</code> <code>*</code> <code>/</code> <code>%</code>
+			</dd>
+			<dt>Сравнения</dt>
+			<dd>
+				<code>&lt;</code>
+				<code>&gt;</code>
+				<code>&lt;=</code>
+				<code>&gt;=</code>
+				<code>==</code>
+				<code>!=</code>
+				<code>===</code>
+				<code>!==</code>
+			</dd>
+			<dt>Логические</dt>
+			<dd>
+				<code>!</code>
+				<code>&amp;&amp;</code>
+				<code>||</code>
+			</dd>
+			<dt>Присваивания</dt>
+			<dd>
+				<code>=</code>
+				<code>*=</code>
+				<code>/=</code>
+				<code>%=</code>
+				<code>+=</code>
+				<code>-=</code>
+			</dd>
+		</dl>
+
+		<style>
+			dt{
+				text-indent: -2em;
+				/*font-weight: bold;*/
+			}
+			dt::before{
+				content: '\2014\00A0\00A0';
+				display: inline-block;
+				width: 2em;
+				color: #BBB;
+				font-weight: normal;
+				text-align: right;
+			}
+			dd{
+				margin-left: 30px;
+			}
+		</style>
+	</div></article>
+	<article class="slide operators" lang="ru" id="plus"><div>
+		<h2>+</h2>
+
+		<pre class="no-numbers">
+			<code>Если хотя бы один операнд строка</code>
+			<code>	<mark>конкатенация</mark></code>
+			<code>Иначе</code>
+			<code>	<mark>сложение</mark></code>
+		</pre>
+
+		<pre>
+			<code>'абв' + 'где' // 'абвгде'</code>
+			<code>'' + 1 // '1' - компактнее String(value)</code>
+		</pre>
+	</div></article>
+	<article class="slide" lang="ru"><div>
+		<h2>Сравнение с приведением типов</h2>
+
+		<pre>
+			<code>'1' == 1 <mark class="comment">// true</mark></code>
+			<code>true == 1 <mark class="comment">// true</mark></code>
+			<code>true == 'true' <mark class="comment">// true</mark></code>
+		</pre>
+	</div></article>
+	<article class="slide" lang="ru"><div>
+		<h2>Сравнение без приведения типов</h2>
+
+		<pre>
+			<code>'1' === 1 <mark class="comment">// false</mark></code>
+			<code>true === 1 <mark class="comment">// false</mark></code>
+			<code>true === 'true' <mark class="comment">// false</mark></code>
+			<code>1 === 1 <mark class="comment">// true</mark></code>
+		</pre>
+	</div></article>
+	<article class="slide operators" lang="ru"><div>
+		<h2>&amp;&amp;</h2>
+
+		<pre class="no-numbers">
+			<code>Если значение первого операнда истинное</code>
+			<code>	<mark>результат - второй операнд</mark></code>
+			<code>Иначе</code>
+			<code>	<mark>результат - первый операнд</mark></code>
+		</pre>
+
+		<pre>
+			<code>"" &amp;&amp; 10 <mark class="comment">// ""</mark></code>
+			<code>true &amp;&amp; "ok" <mark class="comment">// "ok"</mark></code>
+		</pre>
+
+		<style>
+			.operators h2{
+				text-align: center;
+			}
+		</style>
+	</div></article>
+	<article class="slide operators" lang="ru"><div>
+		<h2>||</h2>
+
+		<pre class="no-numbers">
+			<code>Если значение первого операнда истинное</code>
+			<code>	<mark>результат - первый операнд</mark></code>
+			<code>Иначе</code>
+			<code>	<mark>результат - второй операнд</mark></code>
+		</pre>
+
+		<pre>
+			<code>some = some || "some";</code>
+		</pre>
+
+		<style>
+			.operators h2{
+				text-align: center;
+			}
+		</style>
 	</div></article>
 	<!-- <p class="badge"><a href="https://github.com/shower/shower">Fork me on Github</a></p> -->
 	<!--
