@@ -570,16 +570,12 @@
 	<article class="slide" lang="ru"><div>
 		<h2>undefined</h2>
 		<ul>
-			<li>Значение по умолчанию для переменных и параметров функции</li>
-			<li>Значение отсутствующих свойств объекта</li>
+			<li>Значение переменных по умолчанию</li>
 		</ul>
 
 		<pre>
-			<code>var myVar,</code>
-			<code>	o = {foo: 1};</code>
-			<code> </code>
+			<code>var myVar;</code>
 			<code>typeof myVar; <mark class="comment">// undefined</mark></code>
-			<code>typeof o.bar; <mark class="comment">// undefined</mark></code>
 		</pre>
 
 	</div></article>
@@ -627,20 +623,20 @@
 		</style>
 
 	</div></article>
-	<article class="slide larger" lang="ru"><div>
-		<h2>Потеря точности</h2>
+<!-- 	<article class="slide larger" lang="ru"><div>
+	<h2>Потеря точности</h2>
 
-		<pre>
-			<code>0.1 + 0.2 <mark class="comment">// 0.30000000000000004</mark></code>
-			<code>9999999999999999 <mark class="comment">// 10000000000000000</mark></code>
-		</pre>
+	<pre>
+		<code>0.1 + 0.2 <mark class="comment">// 0.30000000000000004</mark></code>
+		<code>9999999999999999 <mark class="comment">// 10000000000000000</mark></code>
+	</pre>
 
 
-		<p>
-			<a href="http://floating-point-gui.de/">http://floating-point-gui.de/</a>
-		</p>
+	<p>
+		<a href="http://floating-point-gui.de/">http://floating-point-gui.de/</a>
+	</p>
 
-	</div></article>
+</div></article> -->
 	<article class="slide larger" lang="ru" id="nan"><div>
 		<h2>NaN</h2>
 
@@ -734,29 +730,29 @@
 			<code>console.log(myString); <mark class="comment">// "my string"</mark></code>
 		</pre>
 	</div></article>
-	<article class="slide" lang="ru" id="stringMethods"><div>
-		<h2>Методы</h2>
+<!-- 	<article class="slide" lang="ru" id="stringMethods"><div>
+	<h2>Методы</h2>
 
-		<div class="columned">
-			charAt<br>
-			indexOf<br>
-			lastIndexOf<br>
-			match<br>
-			replace<br>
-			search<br>
-			splice<br>
-			split<br>
-			substring<br>
-			toLowerCase<br>
-			toUpperCase
-		</div>
+	<div class="columned">
+		charAt<br>
+		indexOf<br>
+		lastIndexOf<br>
+		match<br>
+		replace<br>
+		search<br>
+		splice<br>
+		split<br>
+		substring<br>
+		toLowerCase<br>
+		toUpperCase
+	</div>
 
-		<style>
-			#stringMethods .columned{
-				-webkit-column-count: 4;
-			}
-		</style>
-	</div></article>
+	<style>
+		#stringMethods .columned{
+			-webkit-column-count: 4;
+		}
+	</style>
+</div></article> -->
 	<article class="slide larger" lang="ru" id="stringFunction"><div>
 		<h2>Функция String</h2>
 
@@ -920,17 +916,49 @@
 	<article class="slide operators" lang="ru"><div>
 		<h2>&amp;&amp;</h2>
 
+		<pre>
+			<code><span class="bad">false</span> &amp;&amp; <span class="bad">false</span> - <span class="bad">false</span> </code>
+			<code><span class="bad">false</span> &amp;&amp; <span class="good">true</span> - <span class="bad">false</span> </code>
+			<code><span class="good">true</span> &amp;&amp; <span class="bad">false</span> - <span class="bad">false</span> </code>
+			<code><span class="good">true</span> &amp;&amp; <span class="good">true</span> - <span class="good">true</span> </code>
+		</pre>
+
+		<style>
+			.operators h2{
+				text-align: center;
+			}
+		</style>
+	</div></article>
+	<article class="slide operators" lang="ru"><div>
+		<h2>&amp;&amp;</h2>
+
 		<pre class="no-numbers">
-			<code>Если значение первого операнда истинное</code>
-			<code>	<mark>результат - второй операнд</mark></code>
-			<code>Иначе</code>
+			<code>Если значение первого операнда ложное</code>
 			<code>	<mark>результат - первый операнд</mark></code>
+			<code>Иначе</code>
+			<code>	<mark>результат - второй операнд</mark></code>
 		</pre>
 
 		<pre>
 			<code>value &amp;&amp; console.log(value);</code>
 		</pre>
 
+
+		<style>
+			.operators h2{
+				text-align: center;
+			}
+		</style>
+	</div></article>
+	<article class="slide operators" lang="ru"><div>
+		<h2>||</h2>
+
+		<pre>
+			<code><span class="bad">false</span> || <span class="bad">false</span> - <span class="bad">false</span></code>
+			<code><span class="bad">false</span> || <span class="good">true</span> - <span class="good">true</span></code>
+			<code><span class="good">true</span> || <span class="bad">false</span> - <span class="good">true</span></code>
+			<code><span class="good">true</span> || <span class="good">true</span> - <span class="good">true</span></code>
+		</pre>
 
 		<style>
 			.operators h2{
@@ -994,6 +1022,10 @@
 	</div></article>
 	<article class="slide larger" lang="ru"><div>
 		<h2>Тернарный оператор</h2>
+
+		<pre>
+			<code>условие <mark>?</mark> выражение1 <mark>:</mark> выражение2</code>
+		</pre>
 
 		<pre>
 			<code>var msg = isTrue <mark>?</mark> "Истина" <mark>:</mark> "Ложь";</code>
