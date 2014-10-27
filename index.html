@@ -21,6 +21,7 @@
 		.bad{
 			color: red;
 		}
+
 		.operators h2{
 			text-align: center;
 			font-family: 'PT Mono',monospace;
@@ -28,7 +29,7 @@
 		.slide pre.no-numbers :before{
 			content: "";
 		}
-		.slide.larger{
+		.larger{
 			font-size: 140%;
 		}
 		.slide.larger pre code:before{
@@ -38,6 +39,12 @@
 		.slide.larger pre,
 		.slide.larger ul{
 			margin-bottom: 20px;
+		}
+		.less-h2 h2{
+			margin-bottom: 20px;
+		}
+		.slide.less-code code{
+			line-height: 1.8;
 		}
 	</style>
 </head>
@@ -50,7 +57,7 @@
 		<p>
 			Подключение скриптов.<br>
 			Переменные и типы данных.<br>
-			Операторы, условные операторы, циклы
+			Операторы, операторы ветвления, циклы
 		</p>
 		<p class="footnote">
 			Свирский Артем, 2014
@@ -301,7 +308,7 @@
 		<p>Переменная - именованная ячейка памяти.</p>
 		<p>Объявляется с помощью ключевого слова <code>var</code> и <mark>идентификатора</mark>.</p>
 
-		<div class="holder">
+		<div class="holder larger">
 			<pre>
 				<code><mark >var</mark> myVar;</code>
 			</pre>
@@ -388,19 +395,20 @@
 			<h3 class="bad">Плохо</h3>
 
 			<pre>
-				<code>var myVar;</code>
-				<code>myVar <mark>= 'my var'</mark>;</code>
+				<code>var myVar; <mark class="comment">// объявление</mark></code>
+				<code>myVar = <mark>'my var'</mark>; <mark class="comment">// присваивание</mark></code>
 			</pre>
 
 			<h3 class="good">Хорошо</h3>
 
 			<pre>
-				<code>var myVar <mark>= 'my var'</mark>;</mark></code>
+				<code>var myVar = <mark>'my var'</mark>;</mark> <mark class="comment">// инициализация</mark></code>
 			</pre>
 		<!-- </div> -->
 
 		<style>
-			#initialization .holder{
+			#initialization h2{
+				margin-bottom: 10px;
 				/*-webkit-box-align: center;*/
 			}
 			#initialization pre{
@@ -951,6 +959,112 @@
 				text-align: center;
 			}
 		</style>
+	</div></article>
+	<article class="slide larger" lang="ru"><div>
+		<h2>Операторы ветвления</h2>
+
+		<ul>
+			<li><code>if else</code></li>
+			<li><code>?:</code></li>
+			<li><code>switch case</code></li>
+		</ul>
+
+	</div></article>
+	<article class="slide larger" lang="ru"><div>
+		<h2>if else</h2>
+
+		<pre>
+			<code>if(expression)</code>
+			<code>	statement1;</code>
+			<code>else</code>
+			<code>	statement2;</code>
+		</pre>
+
+	</div></article>
+	<article class="slide larger" lang="ru"><div>
+		<h2>Лучше всегда указывать фигурные скобки</h2>
+
+		<pre>
+			<code>if(isTrue){</code>
+			<code>	console.log("Значение истинное");</code>
+			<code>}else{</code>
+			<code>	console.log("Значение ложное");</code>
+			<code>}</code>
+		</pre>
+	</div></article>
+	<article class="slide larger" lang="ru"><div>
+		<h2>Тернарный оператор</h2>
+
+		<pre>
+			<code>var msg = isTrue <mark>?</mark> "Истина" <mark>:</mark> "Ложь";</code>
+			<code>console.log(msg);</code>
+		</pre>
+
+	</div></article>
+	<article class="slide less-h2 less-code" lang="ru"><div>
+		<h2>Вложенный if else</h2>
+
+		<h3 class="bad">Плохо</h3>
+		<pre>
+			<code>if(value === 0){</code>
+			<code>	console.log("Ноль");</code>
+			<code>}else{</code>
+			<code>	if(value === 1){</code>
+			<code>		console.log("Один");</code>
+			<code>	}else{</code>
+			<code>		console.log("Другое");</code>
+			<code>	}</code>
+			<code>}</code>
+		</pre>
+	</div></article>
+	<article class="slide less-h2 less-code" lang="ru"><div>
+		<h2>Вложенный if else</h2>
+
+		<h3 class="good">Лучше</h3>
+		<pre>
+			<code>if(value === 0){</code>
+			<code>	console.log("Ноль");</code>
+			<code>}else if(value === 1){</code>
+			<code>	console.log("Один");</code>
+			<code>}else{</code>
+			<code>	console.log("Другое");</code>
+			<code>}</code>
+		</pre>
+	</div></article>
+	<article class="slide less-h2 less-code" lang="ru" id="switch"><div>
+		<h2>switch case</h2>
+
+		<pre>
+			<code>switch(value){</code>
+			<code>	case 0:</code>
+			<code>		console.log("Ноль");</code>
+			<code>		break;</code>
+			<code>	case 1:</code>
+			<code>		console.log("Один");</code>
+			<code>		break;</code>
+			<code>	default:</code>
+			<code>		console.log("Другое");</code>
+			<code>}</code>
+		</pre>
+	</div></article>
+	<article class="slide larger" lang="ru"><div>
+		<h2>Циклы</h2>
+
+		<ul>
+			<li>С предусловием</li>
+			<li>С постусловием</li>
+		</ul>
+
+	</div></article>
+	<article class="slide cover w h" lang="ru"><div>
+		<img src="images/loops.png">
+	</div></article>
+	<article class="slide larger" lang="ru"><div>
+		<h2>while</h2>
+
+		while(isTrue)
+			statement
+
 	</div></article>
 	<!-- <p class="badge"><a href="https://github.com/shower/shower">Fork me on Github</a></p> -->
 	<!--
