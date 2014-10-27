@@ -28,6 +28,17 @@
 		.slide pre.no-numbers :before{
 			content: "";
 		}
+		.slide.larger{
+			font-size: 140%;
+		}
+		.slide.larger pre code:before{
+			margin-left: -70px;
+		}
+		.slide.larger p,
+		.slide.larger pre,
+		.slide.larger ul{
+			margin-bottom: 20px;
+		}
 	</style>
 </head>
 <body class="list">
@@ -105,7 +116,7 @@
 		}
 	</style>
 </div></article> -->
-<!-- 	<article class="slide" lang="ru" id="history"><div>
+	<article class="slide" lang="ru" id="history"><div>
 	<h2>История</h2>
 
 	<dl>
@@ -142,7 +153,7 @@
 			margin-left: 30px;
 		}
 	</style>
-</div></article> -->
+</div></article>
 	<article class="slide" id="JSEqualsECMA"><div>
 		<h2>JavaScript === ECMAScript ?</h2>
 		<mark class="next">JavaScript = <span class="es">ECMAScript</span> + <span class="dom">DOM</span> + <span class="bom">BOM</span>;</mark>
@@ -369,7 +380,7 @@
 	</style>
 
 </div></article> -->
-	<article class="slide" lang="ru" id="initialization"><div>
+	<article class="slide larger" lang="ru" id="initialization"><div>
 		<h2>Инициализация</h2>
 
 		<!-- <div class="holder"> -->
@@ -398,7 +409,7 @@
 		</style>
 
 	</div></article>
-	<article class="slide" lang="ru" id="singleVar"><div>
+	<article class="slide larger" lang="ru" id="singleVar"><div>
 		<h2>Единственная инструкция var</h2>
 
 		<!-- <div class="holder"> -->
@@ -417,6 +428,9 @@
 		<!-- </div> -->
 
 		<style>
+			#singleVar h2{
+				margin-bottom: 10px;
+			}
 			#singleVar .holder{
 				/*-webkit-box-align: center;*/
 			}
@@ -450,7 +464,7 @@
 			}
 		</style>
 	</div></article>
-	<article class="slide" lang="ru" id="noBlockScope"><div>
+	<article class="slide larger" lang="ru" id="noBlockScope"><div>
 		<h2>Нету блочной области видимости</h2>
 
 		<pre>
@@ -470,7 +484,7 @@
 			}
 		</style>
 	</div></article>
-	<article class="slide" lang="ru" id="dataTypes"><div>
+	<article class="slide larger" lang="ru" id="dataTypes"><div>
 		<h2>Типы данных</h2>
 
 		<div class="holder">
@@ -504,21 +518,21 @@
 				-webkit-box-pack: start;
 			}
 			#dataTypes .column{
-				margin-right: 200px;
+				margin-right: 150px;
 				/*margin: 0 100px;*/
 			}
 		</style>
 
 	</div></article>
-	<article class="slide" lang="ru" id="dynamicTyping"><div>
+	<article class="slide larger" lang="ru" id="dynamicTyping"><div>
 		<h2>Динамическая типизация</h2>
 
 		<p>Тип переменной определяется в момент присваивания значения</p>
 
 			<pre>
-				<code><mark >var</mark> myVar = 1;</code>
-				<code>myVar = "foo";</code>
-				<code>myVar = true;</code>
+				<code>var myVar <mark>= 1</mark>;</code>
+				<code>myVar <mark>= "foo"</mark>;</code>
+				<code>myVar <mark>= true</mark>;</code>
 			</pre>
 	</div></article>
 	<article class="slide" lang="ru" id="typeof"><div>
@@ -569,14 +583,14 @@
 		<h3 class="bad">Плохо</h3>
 
 		<pre>
-			<code>var activeItemIndex = 1;</code>
-			<code>activeItemIndex = <mark>undefined</mark>;</code>
+			<code>var activeItem = {};</code>
+			<code>activeItem = <mark>undefined</mark>;</code>
 		</pre>
 
 		<h3 class="good">Хорошо</h3>
 		<pre>
-			<code>var activeItemIndex = 1;</code>
-			<code>activeItemIndex = <mark>null</mark>;</code>
+			<code>var activeItem = {};</code>
+			<code>activeItem = <mark>null</mark>;</code>
 		</pre>
 
 	</div></article>
@@ -605,7 +619,7 @@
 		</style>
 
 	</div></article>
-	<article class="slide" lang="ru"><div>
+	<article class="slide larger" lang="ru"><div>
 		<h2>Потеря точности</h2>
 
 		<pre>
@@ -619,7 +633,7 @@
 		</p>
 
 	</div></article>
-	<article class="slide" lang="ru" id="nan"><div>
+	<article class="slide larger" lang="ru" id="nan"><div>
 		<h2>NaN</h2>
 
 		<p>Специальное значение: Not a Number</p>
@@ -644,7 +658,7 @@
 		</style>
 
 	</div></article>
-	<article class="slide" lang="ru"><div>
+	<article class="slide larger" lang="ru"><div>
 		<h2>Функция Number</h2>
 
 		<p>Конвертирует значение в число</p>
@@ -661,7 +675,7 @@
 		</pre>
 
 	</div></article>
-	<article class="slide" lang="ru"><div>
+	<article class="slide larger" lang="ru"><div>
 		<h2>Функция parseInt</h2>
 
 <!-- 		<ul>
@@ -678,7 +692,7 @@
 		</pre>
 
 	</div></article>
-	<article class="slide"><div>
+	<article class="slide larger" lang="ru"><div>
 		<h2>Строки</h2>
 		<ul>
 			<li>Последовательность 16-битных символов</li>
@@ -686,7 +700,7 @@
 			<li>Нету <code>char</code></li>
 		</ul>
 	</div></article>
-	<article class="slide"><div>
+	<article class="slide larger"><div>
 		<h2>Длина строки</h2>
 
 		<pre>
@@ -695,7 +709,7 @@
 		</pre>
 
 	</div></article>
-	<article class="slide"><div>
+	<article class="slide larger"><div>
 		<h2>Строки как массивы</h2>
 
 		<pre>
@@ -703,7 +717,7 @@
 			<code>console.log(<mark>myString[0]</mark>); <mark class="comment">// "m"</mark></code>
 		</pre>
 	</div></article>
-	<article class="slide"><div>
+	<article class="slide larger"><div>
 		<h2>Строки неизменяемы</h2>
 
 		<pre>
@@ -735,7 +749,7 @@
 			}
 		</style>
 	</div></article>
-	<article class="slide" lang="ru" id="stringFunction"><div>
+	<article class="slide larger" lang="ru" id="stringFunction"><div>
 		<h2>Функция String</h2>
 
 		<p>
@@ -746,7 +760,7 @@
 			<code><mark>String(10)</mark> <mark class="comment">// "10"</mark></code>
 		</pre>
 	</div></article>
-	<article class="slide" lang="ru" id="booleans"><div>
+	<article class="slide larger" lang="ru" id="booleans"><div>
 		<h2>Логический тип</h2>
 
 		<ul>
@@ -754,7 +768,7 @@
 			<li>false</li>
 		</ul>
 	</div></article>
-	<article class="slide" lang="ru" id="booleanFunction"><div>
+	<article class="slide larger" lang="ru" id="booleanFunction"><div>
 		<h2>Функция Boolean</h2>
 
 		<p>Конвертирует значение в логическое.</p>
@@ -798,7 +812,7 @@
 		</pre>
 
 	</div></article>
-	<article class="slide" lang="ru" id="operators"><div>
+	<article class="slide larger" lang="ru" id="operators"><div>
 		<h2>Операторы</h2>
 
 		<ul>
@@ -876,7 +890,7 @@
 			<code>'' + 1 // '1' - компактнее String(1)</code>
 		</pre>
 	</div></article>
-	<article class="slide" lang="ru"><div>
+	<article class="slide larger" lang="ru"><div>
 		<h2>Сравнение с приведением типов</h2>
 
 		<pre>
@@ -885,7 +899,7 @@
 			<code>true == 'true' <mark class="comment">// true</mark></code>
 		</pre>
 	</div></article>
-	<article class="slide" lang="ru"><div>
+	<article class="slide larger" lang="ru"><div>
 		<h2>Сравнение без приведения типов</h2>
 
 		<pre>
