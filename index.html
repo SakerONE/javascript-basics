@@ -974,10 +974,10 @@
 		<h2>if else</h2>
 
 		<pre>
-			<code>if(expression)</code>
-			<code>	statement1;</code>
+			<code>if(выражение)</code>
+			<code>	инструкция1; <mark class="comment">// statement1</mark></code>
 			<code>else</code>
-			<code>	statement2;</code>
+			<code>	инструкция2; <mark class="comment">// statement2</mark></code>
 		</pre>
 
 	</div></article>
@@ -1051,10 +1051,20 @@
 		<h2>Циклы</h2>
 
 		<ul>
-			<li>С предусловием</li>
-			<li>С постусловием</li>
+			<li>
+				С предусловием
+				<ul>
+					<li><code>while</code></li>
+					<li><code>for</code></li>
+				</ul>
+			</li>
+			<li>
+				С постусловием
+				<ul>
+					<li><code>do while</code></li>
+				</ul>
+			</li>
 		</ul>
-
 	</div></article>
 	<article class="slide cover w h" lang="ru"><div>
 		<img src="images/loops.png">
@@ -1062,9 +1072,78 @@
 	<article class="slide larger" lang="ru"><div>
 		<h2>while</h2>
 
-		while(isTrue)
-			statement
+		<pre>
+			<code>while(выражение)</code>
+			<code>	инструкция; <mark class="comment">// statement</mark></code>
+		</pre>
+	</div></article>
+	<article class="slide larger" lang="ru"><div>
+		<h2>Пример</h2>
 
+		<pre>
+			<code>var i = 0;</code>
+			<code>while(i &lt; 3){</code>
+			<code>	console.log(i);</code>
+			<code>	i++;</code>
+			<code>}</code>
+			<code><mark class="comment">// 0, 1, 2</mark></code>
+		</pre>
+	</div></article>
+	<article class="slide larger" lang="ru"><div>
+		<h2>do while</h2>
+
+		<pre>
+			<code>var i = 3;</code>
+			<code>do{</code>
+			<code>	console.log(i);</code>
+			<code>	i++;</code>
+			<code>}while(i &lt; 3)</code>
+			<code><mark class="comment">// 3</mark></code>
+		</pre>
+	</div></article>
+	<article class="slide larger" lang="ru"><div>
+		<h2>for</h2>
+
+		<pre>
+			<code>for(инициализация; проверка; инкремент)</code>
+			<code>	инструкция; <mark class="comment">// statement</mark></code>
+		</pre>
+	</div></article>
+	<article class="slide larger" lang="ru"><div>
+		<h2>Пример</h2>
+
+		<pre>
+			<code>for(i = 0; i &lt; 3; i++){</code>
+			<code>	console.log(i);</code>
+			<code>}</code>
+			<code><mark class="comment">// 0, 1, 2</mark></code>
+		</pre>
+	</div></article>
+	<article class="slide larger less-code less-h2" lang="ru"><div>
+		<h2>break</h2>
+
+		<pre>
+			<code>for(i = 0; i &lt; 3; i++){</code>
+			<code>	if(i === 1){</code>
+			<code>		<mark>break</mark>;</code>
+			<code>	}</code>
+			<code>	console.log(i);</code>
+			<code>}</code>
+			<code><mark class="comment">// 0</mark></code>
+		</pre>
+	</div></article>
+	<article class="slide larger less-code less-h2" lang="ru"><div>
+		<h2>continue</h2>
+
+		<pre>
+			<code>for(i = 0; i &lt; 3; i++){</code>
+			<code>	if(i === 1){</code>
+			<code>		<mark>continue</mark>;</code>
+			<code>	}</code>
+			<code>	console.log(i);</code>
+			<code>}</code>
+			<code><mark class="comment">// 0, 2</mark></code>
+		</pre>
 	</div></article>
 	<!-- <p class="badge"><a href="https://github.com/shower/shower">Fork me on Github</a></p> -->
 	<!--
