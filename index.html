@@ -603,7 +603,7 @@
 
 		<ul>
 			<li>Один тип для целых и дробных чисел</li>
-			<li>Хранятся в 64-битном формате</li>
+			<li>Хранятся в 64-битном формате IEEE-754</li>
 		</ul>
 
 		<!-- <div class="holder"> -->
@@ -623,20 +623,20 @@
 		</style>
 
 	</div></article>
-<!-- 	<article class="slide larger" lang="ru"><div>
-	<h2>Потеря точности</h2>
+	<article class="slide larger" lang="ru"><div>
+		<h2>Потеря точности</h2>
 
-	<pre>
-		<code>0.1 + 0.2 <mark class="comment">// 0.30000000000000004</mark></code>
-		<code>9999999999999999 <mark class="comment">// 10000000000000000</mark></code>
-	</pre>
+		<pre>
+			<code>0.1 + 0.2 <mark class="comment">// 0.30000000000000004</mark></code>
+			<code>9999999999999999 <mark class="comment">// 10000000000000000</mark></code>
+		</pre>
 
 
-	<p>
-		<a href="http://floating-point-gui.de/">http://floating-point-gui.de/</a>
-	</p>
+		<p>
+			<a href="http://floating-point-gui.de/">http://floating-point-gui.de/</a>
+		</p>
 
-</div></article> -->
+	</div></article>
 	<article class="slide larger" lang="ru" id="nan"><div>
 		<h2>NaN</h2>
 
@@ -970,10 +970,10 @@
 		<h2>||</h2>
 
 		<pre class="no-numbers">
-			<code>Если значение первого операнда ложное</code>
-			<code>	<mark>результат - второй операнд</mark></code>
-			<code>Иначе</code>
+			<code>Если значение первого операнда истинное</code>
 			<code>	<mark>результат - первый операнд</mark></code>
+			<code>Иначе</code>
+			<code>	<mark>результат - второй операнд</mark></code>
 		</pre>
 
 		<pre>
